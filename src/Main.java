@@ -5,7 +5,6 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -46,7 +45,7 @@ public class Main {
             long startTime = System.currentTimeMillis();
 
             try {
-                Path path = Paths.get(System.getProperty("user.dir") + "\\src\\" + fileName);
+                Path path = Paths.get(System.getProperty("user.dir") + "\\" + fileName);
                 String result = Files.readString(path).trim();
                 long endTime = System.currentTimeMillis();
                 System.out.printf("File %s read in %dms\nContent: %s\n", fileName, endTime-startTime, result);
